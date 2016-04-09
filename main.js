@@ -11,5 +11,11 @@ domain.onJoin = function() {
         return msg;
     }, String));
 }
+domain.onJoin = function(){
+  this.register("counter", riffle.want(function(){
+    var count = 0;
+    return count++;
+  }))
+}
 
 domain.join()
